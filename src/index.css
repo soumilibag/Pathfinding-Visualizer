@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*PATHFINDING VISUALIZER ANIMATIONS*/
+
+@keyframes traversedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: #9333eabf; /* Purple with opacity */
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #4f46e5bf; /* Indigo with opacity */
+  }
+  75% {
+    transform: scale(1.2);
+    background-color: #3b82f6bf; /* Blue with opacity */
+  }
+  100% {
+    transform: scale(1);
+    background-color: #22d3ee;    /* Cyan / Teal */
+  }
+}
+
+.animate-traversed {
+  animation: traversedAnimation 0.5s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes pathAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: #e11d48bf; /* Rose with opacity */
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #ea580cbf; /* Orange with opacity */
+  }
+  75% {
+    transform: scale(1.2);
+    background-color: #fb923cbf; /* Light Orange with opacity */
+  }
+  90% {
+    transform: scale(0.8);
+    background-color: #fde68a;    /* Amber/Yellow glow */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-path {
+  animation: pathAnimation 1.5s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes wallAnimation {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-wall {
+  animation: wallAnimation 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.animate-traversed,
+.animate-path,
+.animate-wall {
+  transform-origin: center center;
+}
+
+/*APP BASE STYLES*/
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1f3040;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
